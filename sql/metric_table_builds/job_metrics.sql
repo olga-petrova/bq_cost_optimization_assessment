@@ -30,7 +30,7 @@ SELECT
         FROM
         UNNEST(job_stages) stage
     ) bytes_spilled
-FROM `{INFOSCHEMA_PROJECT_NAME}`.`region-{REGION}`.INFORMATION_SCHEMA.JOBS{INFO_TABLE_SUFFIX} jbp
+FROM `{INFOSCHEMA_PROJECT_NAME}`.`region-{REGION}`.`{INFORMATION_SCHEMA_JOBS_TABLE}` jbp
 WHERE
     creation_time BETWEEN TIMESTAMP_SUB(current_timestamp, INTERVAL 365 day) AND current_timestamp
     AND jbp.statement_type != 'SCRIPT'

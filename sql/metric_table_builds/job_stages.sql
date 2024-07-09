@@ -10,7 +10,7 @@ SELECT
     job_id as job_id,
     job_stages
 FROM
-    `{INFOSCHEMA_PROJECT_NAME}`.`region-{REGION}`.INFORMATION_SCHEMA.JOBS{INFO_TABLE_SUFFIX} jbp
+    `{INFOSCHEMA_PROJECT_NAME}`.`region-{REGION}`.`{INFORMATION_SCHEMA_JOBS_TABLE}` jbp
     ,UNNEST(job_stages) as job_stages
 WHERE
     creation_time BETWEEN TIMESTAMP_SUB(current_timestamp, INTERVAL 365 day) AND current_timestamp
