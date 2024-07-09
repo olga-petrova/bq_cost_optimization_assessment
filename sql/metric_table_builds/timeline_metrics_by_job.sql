@@ -15,7 +15,7 @@ SELECT
   SUM(total_bytes_processed) total_bytes_processed,
   SUM(period_shuffle_ram_usage_ratio) period_shuffle_ram_usage_ratio,
   SUM(period_estimated_runnable_units) period_estimated_runnable_units
-FROM `{INFOSCHEMA_PROJECT_NAME}`.`region-{REGION}`.`{INFORMATION_SCHEMA_JOBS_TABLE}` jbp
+FROM `{INFOSCHEMA_PROJECT_NAME}`.`region-{REGION}`.`{INFORMATION_SCHEMA_JOBS_TIMELINE_TABLE}` jbp
 WHERE
   job_creation_time BETWEEN TIMESTAMP_SUB(current_timestamp, INTERVAL 365 day) AND current_timestamp
     AND jbp.statement_type != 'SCRIPT'
