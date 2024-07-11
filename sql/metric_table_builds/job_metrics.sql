@@ -10,7 +10,7 @@ SELECT
     project_id,
     user_email,
     job_id,
-    error_result,
+    --error_result,
     statement_type,
     labels,
     total_slot_ms,
