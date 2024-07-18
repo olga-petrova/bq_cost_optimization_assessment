@@ -8,7 +8,7 @@ SELECT
     -- error_result,
     -- statement_type,
     -- labels,
-    SUM(total_slot_ms) as slot_ms,
+    SUM(total_slot_ms/1000.0) as slots,
     SUM(query_time_secs) as total_query_time,
     SUM(total_bytes_processed) as total_bytes_processed
 FROM `{DESTINATION_PROJECT_NAME}`.`{DESTINATION_DATASET_NAME}`.`job_metrics_{INFOSCHEMA_PROJECT_NAME_FOR_TABLE}`
